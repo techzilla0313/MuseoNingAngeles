@@ -1,0 +1,9 @@
+CREATE TABLE feedbacks (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  feedback_text TEXT NOT NULL,
+  rating INT NOT NULL CHECK (rating BETWEEN 1 AND 5),
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+ALTER TABLE feedbacks DROP FOREIGN KEY feedbacks_ibfk_1;
+ALTER TABLE feedbacks DROP COLUMN user_id;
